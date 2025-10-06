@@ -8,7 +8,6 @@ Hello Students,
 Here is a summary of today's meeting session:
 
 - You will be building an AQI (Air Quality Index) Analysis bot for your city.
-
 As part of the project, you will work with:
 - Data collection (using any API you like)
 - Data preprocessing
@@ -17,7 +16,6 @@ As part of the project, you will work with:
 - Training your own chosen models on your dataset.
 - Analyzing and Reporting results
 - A small frontend (could be on streamlit or gradio)
-
 And importantly a
 - CI/CD pipeline (using Github actions)
 
