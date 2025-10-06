@@ -14,6 +14,4 @@ As part of the project, you will work with:
 - A small frontend (could be on streamlit or gradio)
 And importantly a
 - CI/CD pipeline (using Github actions)
-
-We will upload the task documents for this project this week.
 I will do some of the more exciting projects aswell.
