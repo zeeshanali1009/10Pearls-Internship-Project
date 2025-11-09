@@ -1,0 +1,13 @@
+pandas
+numpy
+requests
+scikit-learn
+joblib
+streamlit
+pyarrow
+matplotlib
+shap
+lightgbm
+xgboost
+python-dateutil
+pytest

@@ -1,17 +1,26 @@
-# 10Pearls-Remote-Internship-Projects
-I am doing an internship in the 10Pearls software house and I will be making the exciting projects ahead.
-1. Air Quality Index Checker Application
-   I will be making a real time weather app that predicts the weather condition according to the existing real time data.It will help me alot in gaining the real time experience of how things are gonna working out.
-Here we have the following instructions
-- You will be building an AQI (Air Quality Index) Analysis bot for your city.
-As part of the project, you will work with:
-- Data collection (using any API you like)
-- Data preprocessing
-- Feature selection 
-- Uploading Features to Feature store (such as Hopsworks)
-- Training your own chosen models on your dataset.
-- Analyzing and Reporting results
-- A small frontend (could be on streamlit or gradio)
-And importantly a
-- CI/CD pipeline (using Github actions)
-I will do some of the more exciting projects aswell.
+# Pearls AQI Predictor
+
+Minimal end-to-end AQI prediction system (fetch -> features -> train -> serve).
+
+## Quick start
+1. Create a Python 3.9+ virtualenv
+2. `pip install -r requirements.txt`
+3. Put your OpenWeather API key in `config.json` or as environment variable `OPENWEATHER_API_KEY`.
+4. Run `python scripts/fetch_features.py --start 2025-01-01 --end 2025-11-01 --city "Lahore,PK"` to backfill historical hourly data.
+5. Run `python scripts/feature_engineering.py` to build the training table.
+6. Run `python scripts/train_model.py` to train and save the model.
+7. Run the Streamlit app:
+   ```
+   streamlit run app_streamlit.py
+   ```
+
+Files:
+- scripts/fetch_features.py: fetch historical and forecast air-pollution + weather
+- scripts/feature_engineering.py: compute time-based & derived features
+- scripts/train_model.py: trains a RandomForest regressor and saves model
+- app_streamlit.py: small dashboard to show predictions for next 72 hours
+- requirements.txt: Python deps
+
+Notes:
+- This repo uses local parquet files as a feature store (folder `feature_store/`).
+- The code computes target AQI from PM2.5 using US EPA breakpoints. If you have official AQI values in dataset, you may use those instead.
